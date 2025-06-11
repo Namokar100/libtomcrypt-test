@@ -1,0 +1,16 @@
+name: CBAE Action
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cbom-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Namokar100/cbae-action@v1.0.8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          build-command: |
+            make all_test
