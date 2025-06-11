@@ -87,7 +87,8 @@ jobs:
           -o "${ANALYSIS_OUTPUT_DIR}/cbom.json" \
           -c "${ANALYSIS_OUTPUT_DIR}/compliance_report.txt" \
           --rules "${RULES_PATH}" \
-          -vv | grep -E "\[INFO\]|\[DEBUG\].*build script finished successfully|\[DEBUG\].*--- Running Calyptra build script:"
+          -vv 2>&1 | grep -E "\[INFO\]|\[DEBUG\].*build script finished successfully|\[DEBUG\].*--- Running Calyptra build script:"
+
 
     - name: Check for Vulnerabilities
       id: check-vulnerabilities
