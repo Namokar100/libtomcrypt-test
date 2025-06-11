@@ -84,14 +84,6 @@ jobs:
         python calyptra_ql/cli.py \
           "${REPO_PATH}" \
           --build-command "make all_test" \
-          -o "${{ env.ANALYSIS_OUTPUT_DIR }}/cbom.json" \
-          -c "${{ env.ANALYSIS_OUTPUT_DIR }}/compliance_report.txt" \
-          --rules "${RULES_PATH}" \
-          -vv | grep -E "\[INFO\]|\[DEBUG\].*build script finished successfully"
-
-        python calyptra_ql/cli.py \
-          "${REPO_PATH}" \
-          --build-command "make all_test" \
           -o "${ANALYSIS_OUTPUT_DIR}/cbom.json" \
           -c "${ANALYSIS_OUTPUT_DIR}/compliance_report.txt" \
           --rules "${RULES_PATH}" \
